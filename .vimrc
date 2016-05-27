@@ -100,6 +100,8 @@ autocmd FileType objc setlocal expandtab
 autocmd FileType objc setlocal tabstop=4
 autocmd FileType objc setlocal softtabstop=4
 autocmd FileType objc setlocal shiftwidth=4
+"fot text
+autocmd FileType text setlocal textwidth=0
 
 "カラー表示
 syntax enable
