@@ -61,7 +61,7 @@ KaoriYa版のMacVimでは元からそうなっている。
 
 # MacVimでIMEオンで入力中に改行すると勝手にIMEオフされる
 
-.vimrcの以下の行を削除する。
+.vimrcの以下の行を削除する。しかしWinで自動補完に支障が出る（補完候補を選んでReturnキー時に改行される）。
 
 	" Recommended key-mappings.
 	" <CR>: close popup and save indent.
@@ -71,3 +71,15 @@ KaoriYa版のMacVimでは元からそうなっている。
 	endfunction
 
 [(参考)](http://baqamore.hatenablog.com/entry/2014/12/28/023713)
+
+
+# Ubuntuのコマンドラインでvim使用時、配色がいまいち
+
+.vimrcで`colorscheme mydark`を設定しているが期待の配色と異なる。
+
+ターミナルの設定を変更する。
+
+Edit -> Profiles... -> 'Default'をEdit -> Colorsタブ -> 'Built-in schemes'を'XTerm'に変更
+
+
+
