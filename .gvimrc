@@ -6,7 +6,7 @@ set transparency=20
 
 "vim74-kaoriya-winを半透明
 if has('win32') || has ('win64')
-	autocmd GUIEnter * set transparency=220
+	autocmd GUIEnter * set transparency=230
 endif
 
 "ツールバー非表示
