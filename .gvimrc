@@ -1,5 +1,3 @@
-"for MacVim
-
 "theme
 colorscheme koehler
 
@@ -32,4 +30,10 @@ if has('win32') || has ('win64')
 	set guifont=MS_Gothic:h10
 	set linespace=0
 	set renderoptions=type:directx,renmode:5
+endif
+
+"ウィンドウサイズを設定
+if has('win32') || has ('win64')
+	set lines=80
+	set columns=120
 endif
