@@ -138,7 +138,7 @@ nmap <Space>b :buffers<CR>:b
 "現在の関数名を表示
 "nnoremap <C-g>f :echo cfi#format("%s", "no function")<CR>
 "Tlistを更新
-nnoremap <C-g>f :TlistSync<CR>
+nnoremap <C-g>f :TlistUpdate<CR>
 
 "-----------Shougo/neocomplcache-----------"
 " Disable AutoComplPop.
