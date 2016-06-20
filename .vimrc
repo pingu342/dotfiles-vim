@@ -189,6 +189,10 @@ if has('win32') || has ('win64')
     let Grep_Shell_Quote_Char = '"'
 endif
 
+"grep.vim用の設定
+let Grep_Skip_Files = '*.bak *~'
+let Grep_Skip_Dirs = '.svn .git'
+
 "vim74-kaoriya-winでESCキーでIMEをOFF
 if has('win32') || has ('win64')
     inoremap <ESC> <ESC>:set iminsert=0<CR>
