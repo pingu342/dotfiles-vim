@@ -112,7 +112,7 @@ set nocompatible
 "カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
-"Quicifix移動
+"Quickfix移動
 "map <C-n> :cn<CR>
 "map <C-p> :cp<CR>
 nnoremap <silent> [q :cprevious<CR>
@@ -132,8 +132,15 @@ nnoremap <silent> ]t :tnext<CR>
 nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
 
-"バッファリスト
-nmap <Space>b :buffers<CR>:b 
+"Quickfixリスト(FuzzyFinder)
+nmap <Space>q :FufQuickfix<CR>
+
+"バッファリスト(FuzzyFinder)
+"nmap <Space>b :buffers<CR>:b 
+nmap <Space>b :FufBuffer<CR>
+
+"タグリスト(FuzzyFinder)
+nmap <Space>t :FufTag<CR>
 
 "現在の関数名を表示
 "nnoremap <C-g>f :echo cfi#format("%s", "no function")<CR>
