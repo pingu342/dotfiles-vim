@@ -22,7 +22,11 @@ NeoBundle 'https://git.wincent.com/command-t.git'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'gtags.vim'
 NeoBundle 'taglist.vim'
-NeoBundle 'Markdown'
+" Markdown ->
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+" <- Markdown
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'tpope/vim-commentary'
@@ -263,5 +267,8 @@ let g:ac_smooth_scroll_enable_accelerating = 0
 "初速変更 (値が小さいほど速い)
 let g:ac_smooth_scroll_du_sleep_time_msec = 0
 let g:ac_smooth_scroll_fb_sleep_time_msec = 0
-"------------------------------------------"
 
+"---------------vim-markdown--------------"
+" folding(折り畳み)を無効
+let g:vim_markdown_folding_disabled = 1
+"------------------------------------------"
