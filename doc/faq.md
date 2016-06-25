@@ -73,6 +73,9 @@ KaoriYa版のMacVimでは元からそうなっている。
 [(参考)](http://baqamore.hatenablog.com/entry/2014/12/28/023713)
 
 
+Macでは自動補完に支障は出ないので、if~endifを使ってWinでのみ上記設定が有効になるように変更。
+
+
 # Ubuntuのコマンドラインでvim使用時、配色がいまいち
 
 .vimrcで`colorscheme mydark`を設定しているが期待の配色と異なる。
