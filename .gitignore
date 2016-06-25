@@ -10,3 +10,6 @@
 
 /.vim/.netrwhist
 /.vim/bundle
+
+.swp
+*~
