@@ -176,9 +176,11 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 if has('win32') || has ('win64')
     inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
     function! s:my_cr_function()
-        return neocomplcache#smart_close_popup() . "\<CR>"
+      "popup表示中のreturnキーを「popup消去して改行挿入」とする場合
+        "return neocomplcache#smart_close_popup() . "\<CR>"
+      "popup表示中のreturnキーを「popup消去のみ」とする場合
         " For no inserting <CR> key.
-        "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+        return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
     endfunction
 endif
 " <TAB>: completion.
