@@ -270,6 +270,33 @@ gvim.exeと同じフォルダにglobal.exe, gtags.exeを置くか、PATHを通�
 
 	:NeoBundleInstall
 
+
+## fugitive
+
+vimでgitコマンドを利用可能にするplugin
+
+### How to install
+
+	NeoBundle 'tpope/vim-fugitive'
+
+Gdiffのためにはdiffコマンドをインストールする必要あり
+
+diffコマンドはGit for windowsに入っている
+
+以下のファイルをC:\Program Files\Git\usr\binからコピー
+
+* msys-2.0.dll
+* msys-iconv-2.dll
+* msys-intl-8.dll
+* diff.exe
+
+(参考)
+
+[windows環境のvimでfugitive.vimをインストールするなら「diff」コマンドのインストールを忘れない](http://niwaringo.tumblr.com/post/41359979786/windows%E7%92%B0%E5%A2%83%E3%81%AEvim%E3%81%A7fugitivevim%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B%E3%81%AA%E3%82%89diff%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9)
+
+[Windows環境のvimエディタでdiff機能を使うには](http://nanasi.jp/articles/howto/diff/vimdiff_in_windows.html)
+
+
 ---
 ## TODO
 
