@@ -288,6 +288,7 @@ diffコマンドはGit for windowsに入っている
 * msys-2.0.dll
 * msys-iconv-2.dll
 * msys-intl-8.dll
+* msys-gcc_s-1.dll (win32環境では必要だった)
 * diff.exe
 
 (参考)
