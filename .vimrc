@@ -116,6 +116,11 @@ set nocompatible
 "カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
+"ファイル名として許される文字から:を抜く (winでgfコマンドに必要)
+if has('win32') || has ('win64')
+	set isfname-=:
+endif
+
 "Quickfix移動
 "map <C-n> :cn<CR>
 "map <C-p> :cp<CR>
