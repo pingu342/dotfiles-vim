@@ -35,6 +35,10 @@ NeoBundle 'itchyny/lightline.vim'
 "NeoBundle 'majutsushi/tagbar'
 NeoBundle 'yonchu/accelerated-smooth-scroll'
 
+"Tlistで十分なので削除
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/unite-outline'
+
 call neobundle#end()
 
 "vim74-kaoriya-winのgvimでエラーになるため
@@ -151,10 +155,17 @@ nmap <Space>b :FufBuffer<CR>
 "タグリスト(FuzzyFinder)
 nmap <Space>t :FufTag<CR>
 
+"ファイルリスト(FuzzyFinder)
+nmap <Space>f :FufFile **/<CR>
+
 "現在の関数名を表示
 "nnoremap <C-g>f :echo cfi#format("%s", "no function")<CR>
 "Tlistを更新
-nnoremap <C-g>f :TlistUpdate<CR>
+nnoremap <C-g>f :TlistUpdate<CR> :TlistSync<CR>
+
+"Esc連打でハイライト解除
+set hlsearch
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "-----------Shougo/neocomplcache-----------"
 " Disable AutoComplPop.
