@@ -221,7 +221,7 @@ if has('win32') || has ('win64')
 endif
 
 "grep.vim用の設定
-let Grep_Skip_Files = '*.bak *~'
+let Grep_Skip_Files = '*.bak *~ tags GPATH GRTAGS GTAGS'
 let Grep_Skip_Dirs = '.svn .git'
 
 "vim74-kaoriya-winでESCキーでIMEをOFF
