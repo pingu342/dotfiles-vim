@@ -167,6 +167,10 @@ nnoremap <C-g>f :TlistUpdate<CR> :TlistSync<CR>
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+"次の検索候補をウィンド中央に表示
+nmap n nzz
+nmap N Nzz
+
 "-----------Shougo/neocomplcache-----------"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
