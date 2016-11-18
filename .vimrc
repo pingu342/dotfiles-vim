@@ -174,6 +174,10 @@ nmap N Nzz
 "入力補完でpreview windowを表示させない
 set completeopt=menuone
 
+"-----------taglist------------------------"
+let Tlist_Process_File_Always = 1
+"let Tlist_Use_Right_Window = 1
+
 "-----------Shougo/neocomplete-------------"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
