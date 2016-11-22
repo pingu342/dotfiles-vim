@@ -85,4 +85,3 @@ Macでは自動補完に支障は出ないので、if~endifを使ってWinでの
 Edit -> Profiles... -> 'Default'をEdit -> Colorsタブ -> 'Built-in schemes'を'XTerm'に変更
 
 
-

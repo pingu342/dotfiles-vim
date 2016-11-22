@@ -144,6 +144,10 @@ ctagがインストールされていないのが原因
 
 Exuberant Ctagsの項を参照
 
+#### Q. `:Tlist`でタグリストを開くと"taglist fails to generate tags"エラーが出る。
+
+windows版gvimでこのエラーが出たときは、開いているファイルのPATHに日本語が含まれていたことが原因だった。
+
 
 ## タブ化
 
@@ -297,6 +301,14 @@ diffコマンドはGit for windowsに入っている
 
 [Windows環境のvimエディタでdiff機能を使うには](http://nanasi.jp/articles/howto/diff/vimdiff_in_windows.html)
 
+
+## FuzzyFinder
+
+### FAQ
+
+#### Q. windows版gvimで`:FufFile`等のコマンドで小窓を表示し、`ESC`で小窓を消した時、previous windowに戻らない
+
+[Vim 7.4.1944 +kaoriya (2016/06/20)](https://github.com/koron/vim-kaoriya/releases/tag/v7.4.1944-20160620)を使用する。以降のバージョンで現象が発生している。
 
 ---
 ## TODO
