@@ -202,6 +202,15 @@ Git for windowsをインストールすればgrepコマンドが`C:¥Program Fil
 		set grepprg=C:¥mytools¥vim74-kaoriya-win¥GitBin¥grep¥ -n
 	endif
 
+### FAQ
+
+#### Q.日本語の検索がうまくいかない
+
+[外部grepの短所](https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-grep)
+
+> * 日本語や日本語pathの扱いに問題がある場合がある。
+> * ファイルごとに文字エンコーディングが違う時、特定の文字エンコーディングしか検索できない。
+> * utf-8のBOM付きの場合、最初の一文字が検索できない事がある。
 
 ## grep.vim
 
