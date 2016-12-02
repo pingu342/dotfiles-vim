@@ -202,6 +202,48 @@ Git for windowsをインストールすればgrepコマンドが`C:¥Program Fil
 		set grepprg=C:¥mytools¥vim74-kaoriya-win¥GitBin¥grep¥ -n
 	endif
 
+Git付属のgrepは日本語の検索ができない(UTF8ならできるが、他の文字コードはできない)
+
+日本語検索のため[jvgrep](https://github.com/mattn/jvgrep)を使う場合の手順
+
+まず、[Go](https://golang.org/)をインストール
+
+インストールすると環境変数PATHに`C:\Go\bin`が追加される
+
+コマンドプロンプトで以下を実行
+
+	> d:
+	> cd d:\work
+	> mkdir go
+	> set GOPATH=d:\work\go
+	> set http_proxy=http://<proxy_host>:<proxy_port>/
+	> set https_proxy=http://<proxy_host>:<proxy_port>/
+	> go get github.com/mattn/jvgrep
+
+`d:\work\go\bin\jvgrep.exe`が作成されていることを確認
+
+	> set PATH=%PATH%;d:\work\go\bin
+	> jvgrep hoge **/*.txt
+
+.vimでjvgrepを使えるように設定
+
+	if has('win32') || has ('win64')
+	    if executable('jvgrep')
+	        set grepprg=jvgrep\ -n
+	    else
+	        set grepprg=C:\mytools\vim74-kaoriya-win\GitBin\grep\ -n
+	    endif
+	    "grep.vim用にGitbashのgpreにパスを通す (残念ながらjvgrepに置き換えられない)
+	    let Grep_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\grep.exe' 
+	    let Grep_Xargs_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\xargs.exe' 
+	    let Grep_Find_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\find.exe'
+	    let Egrep_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\grep.exe -E' 
+	    let Grep_Shell_Quote_Char = '"'
+	endif
+
+jvgrepをgrep.vimで使用する方法?
+
+
 ### FAQ
 
 #### Q.日本語の検索がうまくいかない
@@ -211,6 +253,8 @@ Git for windowsをインストールすればgrepコマンドが`C:¥Program Fil
 > * 日本語や日本語pathの扱いに問題がある場合がある。
 > * ファイルごとに文字エンコーディングが違う時、特定の文字エンコーディングしか検索できない。
 > * utf-8のBOM付きの場合、最初の一文字が検索できない事がある。
+
+jvgrepを使えば日本語の検索できる。
 
 ## grep.vim
 
