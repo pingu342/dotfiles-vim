@@ -206,7 +206,9 @@ Git付属のgrepは日本語の検索ができない(UTF8ならできるが、�
 
 日本語検索のため[jvgrep](https://github.com/mattn/jvgrep)を使う場合の手順
 
-まず、[Go](https://golang.org/)をインストール
+まず、[Go](https://golang.org/)とjvgrepをインストール
+
+** windows **
 
 インストールすると環境変数PATHに`C:\Go\bin`が追加される
 
@@ -225,7 +227,20 @@ Git付属のgrepは日本語の検索ができない(UTF8ならできるが、�
 	> set PATH=%PATH%;d:\work\go\bin
 	> jvgrep hoge **/*.txt
 
-.vimでjvgrepを使えるように設定
+** ubuntu **
+
+	$ sudo apt-get install golang
+	$ export GOROOT=/usr/lib/go
+	$ cd ~/work/go
+	$ export GOPATH=~/work/go
+	$ go get github.com/mattn/jvgrep
+
+`~/work/go/bin/jvgrep`が作成されていることを確認
+
+	$ export PATH=$PATH:~/work/go/bin
+	$ jvgrep hoge **/*.txt
+
+次に、.vimでjvgrepを使えるように設定
 
 	if has('win32') || has ('win64')
 	    if executable('jvgrep')
