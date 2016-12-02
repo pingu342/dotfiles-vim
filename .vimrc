@@ -254,9 +254,9 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "vim74-kaoriya-win用のgrep
 if has('win32') || has ('win64')
     if executable('jvgrep')
-        set grepprg=jvgrep\ -n
+        set grepprg=jvgrep\ -8\ -n
     else
-        set grepprg=C:\mytools\vim74-kaoriya-win\GitBin\grep\ -n
+        set grepprg=C:\mytools\vim74-kaoriya-win\GitBin\grep\ --text\ -n
     endif
     "grep.vim用にGitbashのgpreにパスを通す (残念ながらjvgrepに置き換えられない)
     let Grep_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\grep.exe' 
