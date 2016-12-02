@@ -264,7 +264,7 @@ if has('win32') || has ('win64')
     let Grep_Find_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\find.exe'
     let Egrep_Path = 'C:\mytools\vim74-kaoriya-win\GitBin\grep.exe -E' 
     let Grep_Shell_Quote_Char = '"'
-else$
+else
     if executable('jvgrep')
         set grepprg=jvgrep\ -8\ -n
     endif
