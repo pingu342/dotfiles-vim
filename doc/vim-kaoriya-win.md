@@ -256,6 +256,14 @@ Git付属のgrepは日本語の検索ができない(UTF8ならできるが、�
 	    let Grep_Shell_Quote_Char = '"'
 	endif
 
+検索パターンに正規表現を使わない場合、
+
+	:grep -F hoge **/*.c
+
+正規表現を使う場合、
+
+	:grep -G ho.e **/*.c
+
 jvgrepをgrep.vimで使用する方法?
 
 
