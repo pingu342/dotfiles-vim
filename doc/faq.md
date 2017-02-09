@@ -85,3 +85,11 @@ Macでは自動補完に支障は出ないので、if~endifを使ってWinでの
 Edit -> Profiles... -> 'Default'をEdit -> Colorsタブ -> 'Built-in schemes'を'XTerm'に変更
 
 
+# 2つのファイルの差分を見ながら編集
+
+1つ目のファイルをvimで開く
+
+`:VDsplit 2つめのファイル` で差分が表示される。
+
+1つ目のファイルを編集したとき、差分を更新するには `:diffupdate` する。
+
