@@ -93,3 +93,16 @@ Edit -> Profiles... -> 'Default'をEdit -> Colorsタブ -> 'Built-in schemes'を
 
 1つ目のファイルを編集したとき、差分を更新するには `:diffupdate` する。
 
+
+# :Regrep のプロンプトをクリアする
+
+`CTRL-U`で消せる。
+
+[(参考)](http://www.vim.org/scripts/script.php?script_id=311)
+
+> You can retrieve previously entered values for the Grep prompts using the up 
+> and down arrow keys. You can cancel the command by pressing the escape key. 
+> You can use CTRL-U to erase the default shown for the prompt and CTRL-W to 
+> erase the previous word in the prompt. For more information about editing 
+> the prompt, read ':help cmdline-editing' Vim help topic.
+
