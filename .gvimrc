@@ -37,3 +37,10 @@ if has('win32') || has ('win64')
 	set lines=80
 	set columns=120
 endif
+
+"macvimの設定
+if has('gui_macvim')
+	set guifontwide=Migu_1M:h12
+	set guifont=Migu_1M:h13
+endif
+
