@@ -279,6 +279,12 @@ let Grep_Default_Options = '--text'
 if has('win32') || has ('win64')
     inoremap <ESC> <ESC>:set iminsert=0<CR>
 endif
+if has ('unix')
+    function! ImInActivate()
+        call system('fcitx-remote -c')
+    endfunction
+    inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+endif
 
 "対応するif/endifを%で移動
 source $VIMRUNTIME/macros/matchit.vim

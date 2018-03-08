@@ -50,7 +50,9 @@ NORMALモードで以下のコマンドを実行
 
 vim74-kaoriya-winの場合は、.vimrcに、
 
-	inoremap <ESC> <ESC>:set iminsert=0<CR>
+	if has('win32') || has('win64')
+		inoremap <ESC> <ESC>:set iminsert=0<CR>
+	endif
 
 を追加する。
 
@@ -58,6 +60,16 @@ KaoriYa版のMacVimでは元からそうなっている。
 
 [(参考)](https://github.com/splhack/macvim-kaoriya/wiki/Readme#%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%85%A5%E5%8A%9Bim%E8%87%AA%E5%8B%95%E3%82%AA%E3%83%B3%E3%82%AA%E3%83%95)
 
+Ubuntuの場合は、.vimrcに、
+
+	if has('unix')
+		function! ImInActivate()
+			call system('fcitx-remote -c')
+		endfunction
+		inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+	endif
+
+[(参考)](https://qiita.com/hoshitocat/items/a80d613ef73b7a06ec50)
 
 # MacVimでIMEオンで入力中に改行すると勝手にIMEオフされる
 
