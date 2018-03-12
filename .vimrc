@@ -279,11 +279,13 @@ let Grep_Default_Options = '--text'
 if has('win32') || has ('win64')
     inoremap <ESC> <ESC>:set iminsert=0<CR>
 endif
+"unix系でESCキーでIMEをOFF
 if has ('unix')
-    function! ImInActivate()
-        call system('fcitx-remote -c')
-    endfunction
-    inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+" 以下を設定すると入力モード中の方向キーがvi互換動作になってしまう
+"    function! ImInActivate()
+"        call system('fcitx-remote -c')
+"    endfunction
+"    inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 endif
 
 "対応するif/endifを%で移動
@@ -349,3 +351,12 @@ let g:ac_smooth_scroll_fb_sleep_time_msec = 0
 " folding(折り畳み)を無効
 let g:vim_markdown_folding_disabled = 1
 "------------------------------------------"
+
+"背景を透過させる
+"colorschemeセット後に設定すること
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none
+
