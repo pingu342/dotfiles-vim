@@ -71,6 +71,10 @@ Ubuntuの場合は、.vimrcに、
 
 [(参考)](https://qiita.com/hoshitocat/items/a80d613ef73b7a06ec50)
 
+上記を設定すると入力モード中の方向キーがvi互換モードの動作(BとかCとか勝手に入力される)。
+回避方法不明。
+
+
 # MacVimでIMEオンで入力中に改行すると勝手にIMEオフされる
 
 .vimrcの以下の行を削除する。しかしWinで自動補完に支障が出る（補完候補を選んでReturnキー時に改行される）。
@@ -117,4 +121,6 @@ Edit -> Profiles... -> 'Default'をEdit -> Colorsタブ -> 'Built-in schemes'を
 > You can use CTRL-U to erase the default shown for the prompt and CTRL-W to 
 > erase the previous word in the prompt. For more information about editing 
 > the prompt, read ':help cmdline-editing' Vim help topic.
+
+
 
