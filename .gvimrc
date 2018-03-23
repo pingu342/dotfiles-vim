@@ -2,7 +2,9 @@
 colorscheme koehler
 
 "半透明
-set transparency=20
+if has('win32') || has ('win64') || has ('gui_macvim')
+	autocmd GUIEnter * set transparency=20
+endif
 
 "vim74-kaoriya-winを半透明
 if has('win32') || has ('win64')
