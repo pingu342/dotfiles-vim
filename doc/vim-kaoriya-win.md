@@ -324,6 +324,21 @@ gvim.exeと同じフォルダにctags.exeを置くか、PATHを通す
 
 [http://www.kaoriya.net/software/vim/]() からexuberant ctags 日本語対応版 5.8J2をダウンロード (32bit版しかない)
 
+このctagsはデフォルトで日本語がsjisになっている。
+
+	>ctags --help
+	...
+
+	--jcode=ascii|sjis|euc|utf8
+		Specify Japanese kanji code [sjis].
+
+vimで開くファイルがutf8の場合、Tlistが空っぽだったり、タグジャンプできなかったり、いろいろ悲しいことが起こる。
+
+デフォルトをsjisからutf8に変えたい場合は、ホームディレクトリに`.ctags`という隠しファイル（windowsでは隠れないが・・・）を作り`--jcode=utf8`と記載する。
+これでデフォルトがutf8になる。
+
+
+
 ### Memo
 
 * ctagsでは参照元へのジャンプはできない
