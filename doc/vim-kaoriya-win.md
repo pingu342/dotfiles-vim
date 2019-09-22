@@ -83,9 +83,11 @@ GitHubからdotfiles-vimをclone
 
 `mklink`で下記のリンクを作成
 
-	c:¥Users¥ユーザー名¥.vimrc -> dotfiles-vim¥.vimrc
-	c:¥Users¥ユーザー名¥.gvimrc -> dotfiles-vim¥.gvimrc
-	c:¥Users¥ユーザー名¥.vim -> dotfiles-vim¥.vim
+	cmdを管理者で実行
+	$ cd c:\Users\ユーザー名
+	$ mklink .vimrc dotfiles-vim\.vimrc
+	$ mklink .gvimrc dotfiles-vim\.gvimrc
+	$ mklink /D .vim dotfiles-vim\.vim
 
 プラグインをインストール
 vim起動後に、
