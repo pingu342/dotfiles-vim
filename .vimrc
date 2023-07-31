@@ -1,45 +1,86 @@
-"vi非互換（デフォルトでnocompatibleのため不要らしい）
-set nocompatible
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Install dein.vim
+let $CACHE = expand('~/.cache')
+if !isdirectory($CACHE)
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dein_dir = fnamemodify('dein.vim', ':p')
+  if !isdirectory(s:dein_dir)
+    let s:dein_dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+    endif
+  endif
+  execute 'set runtimepath^=' .. substitute(
+        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+"vi非互換（デフォルトでnocompatibleのため不要らしい）
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+"if has('vim_starting')
+"  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"endif
 
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-NeoBundle 'tpope/vim-rails.git'
+" Set dein base path (required)
+let s:dein_base = '~/.cache/dein/'
+
+" Set dein source path (required)
+let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+" Set dein runtime path (required)
+execute 'set runtimepath+=' .. s:dein_src
+
+" Call dein initialization (required)
+call dein#begin(s:dein_base)
+
+call dein#add(s:dein_src)
+
+" Your plugins go here:
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
+
+
+"call neobundle#begin(expand('~/.vim/bundle/'))
+
+"NeoBundleFetch 'Shougo/neobundle.vim'
+
+call dein#add( 'tpope/vim-fugitive' )
+call dein#add( 'Lokaltog/vim-easymotion' )
+call dein#add( 'rstacruz/sparkup', {'rtp': 'vim/'} )
+call dein#add( 'tpope/vim-rails.git' )
 " vim-scripts repos
-NeoBundle 'L9'
-NeoBundle 'FuzzyFinder'
+call dein#add( 'vim-scripts/L9' )
+call dein#add( 'vim-scripts/FuzzyFinder' )
 " non github repos
-NeoBundle 'https://git.wincent.com/command-t.git'
+call dein#add( 'wincent/command-t' )
 " ...
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'gtags.vim'
-NeoBundle 'taglist.vim'
+call dein#add( 'thinca/vim-quickrun' )
+call dein#add( 'ivechan/gtags.vim' )
+call dein#add( 'vim-scripts/taglist.vim' )
 " Markdown ->
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
+call dein#add( 'plasticboy/vim-markdown' )
+call dein#add( 'kannokanno/previm' )
+call dein#add( 'tyru/open-browser.vim' )
 " <- Markdown
-"NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'tpope/vim-commentary'
-"NeoBundle 'tyru/current-func-info.vim'
-NeoBundle 'itchyny/lightline.vim'
-"NeoBundle 'majutsushi/tagbar'
-NeoBundle 'yonchu/accelerated-smooth-scroll'
+call dein#add( 'Shougo/neocomplcache' )
+call dein#add( 'Shougo/neocomplete' )
+call dein#add( 'vim-scripts/grep.vim' )
+call dein#add( 'tpope/vim-commentary' )
+call dein#add( 'tyru/current-func-info.vim' )
+call dein#add( 'itchyny/lightline.vim' )
+call dein#add( 'majutsushi/tagbar' )
+call dein#add( 'yonchu/accelerated-smooth-scroll' )
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
+call dein#add( 'Shougo/unite.vim' )
+call dein#add( 'Shougo/unite-outline' )
 
-call neobundle#end()
+" Finish dein initialization (required)
+call dein#end()
+
+"call neobundle#end()
 
 "vim74-kaoriya-winのgvimでエラーになるため
 if !has('gui_running')
@@ -48,7 +89,15 @@ endif
 highlight LineNr ctermfg=darkyellow
 
 "ファイルタイプpluginとindentを有効
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
 filetype plugin indent on
+
+" Uncomment if you want to install not-installed plugins on startup.
+if dein#check_install()
+ call dein#install()
+endif
 
 "エンコーディング
 set enc=utf-8
